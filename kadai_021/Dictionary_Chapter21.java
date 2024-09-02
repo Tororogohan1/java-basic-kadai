@@ -19,15 +19,14 @@ public class Dictionary_Chapter21 {
         dictionary.put("muscat", "マスカット");
         dictionary.put("cherry", "さくらんぼ");
     }
-	public boolean containsWord(String word) {
-        return dictionary.containsKey(word);
-	}
-        
-        public String getMeaning(String word) {
-            String meaning = dictionary.get(word);
-            if (meaning == null) {
-                return "この単語の意味は登録されていません";
-            }
-            return meaning;
-        }
-	}
+	 public void searchWords(String[] wordsToSearch) {
+	        for (String word : wordsToSearch) {
+	        	
+	        if (dictionary.containsKey(word)) {
+	            	 System.out.println(word + "の意味は" + dictionary.get(word));
+	            } else {
+	            	System.out.println(word + "は辞書にありません。");
+	            }
+	        }
+	 }
+}
