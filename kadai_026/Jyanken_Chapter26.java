@@ -9,10 +9,10 @@ public class Jyanken_Chapter26 {
     private static final String SCISSORS = "s"; // チョキ
     private static final String PAPER = "p";    // パー
     
-    // Scannerをクラス全体で使用する
+   
     private Scanner scanner = new Scanner(System.in);
 
-    // 自分のじゃんけんの手を入力する
+    // 自分のじゃんけんの手
     public String getMyChoice() {
         String choice;
         while (true) {
@@ -29,18 +29,18 @@ public class Jyanken_Chapter26 {
                 System.out.println("正しいじゃんけんの手を入力してください。");
             }
         }
-        // scanner.close()は呼ばない
+        
         return choice;
     }
 
-    // 対戦相手のじゃんけんの手を乱数で選ぶ
+    // 対戦相手のじゃんけんの手　乱数
     public String getRandom() {
         String[] choices = {ROCK, SCISSORS, PAPER};
         int randomIndex = (int) Math.floor(Math.random() * 3);
         return choices[randomIndex];
     }
 
-    // じゃんけんを行う
+    // じゃんけん
     public void playGame() {
         Map<String, String> hands = new HashMap<>();
         hands.put(ROCK, "グー");
